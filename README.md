@@ -1,5 +1,5 @@
 # Delay for JavaScript
-One-line `JS sleep function` based on generator, inspired by tj/co.
+One-line `JS sleep function` based on generator. Without callbacks, promises, never stack overflow. Inspired by tj/co.
 
 __Caution: this is an experiment project, not safe for production. Please use co or Q.__
 
