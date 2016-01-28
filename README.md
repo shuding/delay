@@ -32,6 +32,10 @@ $(function *() {                                                                
 });
 ```
 
+## ...
+
+You could rename the `$` function to avoid any conflict with jQuery. Or just using it under a wrapper scope. 
+
 ## About
 
 @quietshu https://github.com/quietshu/delay
