@@ -8,7 +8,7 @@ __Caution: this is an experiment project, not safe for production. Please use co
 One line, just copy & paste:
 
 ```javascript
-var $=(f,c,t,r)=>(r=(t=t||f()).next()).done?c&&c(r.value):setTimeout(()=>$(f,c,t),r.value); 
+var _=(f,c,t,r)=>(r=(t=t||f()).next()).done?c&&c(r.value):setTimeout(x=>_(f,c,t),r.value); 
 ```
 
 ## How to use it?
@@ -16,9 +16,9 @@ var $=(f,c,t,r)=>(r=(t=t||f()).next()).done?c&&c(r.value):setTimeout(()=>$(f,c,t
 Just run this in your Chrome console (Chrome >= 35, Firefox >= 38, Edge >= 13).
 
 ```javascript
-var $=(f,c,t,r)=>{(r=(t=t||f()).next()).done?c&&c(r.value):setTimeout(()=>$(f,c,t),r.value)}; // <- the source
-$(function *() {                                                                              // <- wrapper
-                                                                                              // <- magic start
+var _=(f,c,t,r)=>{(r=(t=t||f()).next()).done?c&&c(r.value):setTimeout(x=>_(f,c,t),r.value)}; // <- the source
+_(function *() {                                                                             // <- wrapper
+                                                                                             // <- magic start
   console.log('foo'); // output 'foo'
   yield 1000;         // delay 1 sec
   console.log('bar'); // output 'bar'
@@ -34,7 +34,7 @@ $(function *() {                                                                
 
 ## ...
 
-You could rename the `$` function to avoid any conflict with jQuery. Or just using it under a wrapper scope. 
+You could rename the `_` function to avoid conflicts. Or just using it under a wrapper scope. 
 
 ## About
 
