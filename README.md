@@ -1,14 +1,15 @@
 # Delay for JavaScript
-One-line `JS sleep function` based on generator. Without callbacks, promises, never stack overflow. Inspired by tj/co.
+An one line implementation of `sleep function` in JavaScript with generator.  
+Without callbacks, promises, never stack overflow. Inspired by tj/co.
 
-__Caution: this is an experiment project, not safe for production. Please use co or Q.__
+__Warning: this is an experiment project and not safe for production use.__
 
 ## Source
 
 One line, just copy & paste:
 
 ```javascript
-var _=(f,c,t,r)=>(r=(t=t||f()).next()).done?c&&c(r.value):setTimeout(x=>_(f,c,t),r.value); 
+var d=(f,t=f(),r=t.next())=>r.done||setTimeout(d,r.value,f,t); 
 ```
 
 ## How to use it?
@@ -16,9 +17,9 @@ var _=(f,c,t,r)=>(r=(t=t||f()).next()).done?c&&c(r.value):setTimeout(x=>_(f,c,t)
 Just run this in your Chrome console (Chrome >= 35, Firefox >= 38, Edge >= 13).
 
 ```javascript
-var _=(f,c,t,r)=>{(r=(t=t||f()).next()).done?c&&c(r.value):setTimeout(x=>_(f,c,t),r.value)}; // <- the source
-_(function *() {                                                                             // <- wrapper
-                                                                                             // <- magic start
+var d=(f,t=f(),r=t.next())=>r.done||setTimeout(d,r.value,f,t); // <- the source
+d(function *() {                                               // <- wrapper
+                                                               // <- magic start
   console.log('foo'); // output 'foo'
   yield 1000;         // delay 1 sec
   console.log('bar'); // output 'bar'
@@ -34,7 +35,8 @@ _(function *() {                                                                
 
 ## ...
 
-You could rename the `_` function to avoid conflicts. Or just using it under a wrapper scope. 
+You could rename the `d` function to avoid conflicts.  
+Or just using it under a wrapper scope. 
 
 ## About
 
