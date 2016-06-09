@@ -17,19 +17,15 @@ var d=(f,t=f(),r=t.next())=>r.done||setTimeout(d,r.value,f,t);
 Just run this in your Chrome console (Chrome >= 35, Firefox >= 38, Edge >= 13).
 
 ```javascript
-var d=(f,t=f(),r=t.next())=>r.done||setTimeout(d,r.value,f,t); // <- the source
+var d=(f,t=f(),r=t.next())=>r.done||setTimeout(d,r.value,f,t); // <- source code
 d(function *() {                                               // <- wrapper
-                                                               // <- magic start
+                                                               // <- magic
   console.log('foo'); // output 'foo'
   yield 1000;         // delay 1 sec
   console.log('bar'); // output 'bar'
   yield 1000;         // delay 1 sec
   console.log('baz'); // output 'baz'
-  yield 1000;         // delay 1 sec
-  return 'it works';  // return 'it works'
   
-}, function (res) {
-  alert(res);         // callback
 });
 ```
 
