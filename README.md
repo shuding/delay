@@ -1,4 +1,3 @@
-# Delay for JavaScript
 An one line implementation of `sleep function` in JavaScript with generator.  
 Without callbacks or promises. Inspired by tj/co.
 
@@ -12,7 +11,7 @@ One line, just copy & paste:
 var d=(f,t=f(),r=t.next())=>r.done||setTimeout(d,r.value,f,t); 
 ```
 
-## How to use it?
+## Demo
 
 Just run this in your Chrome console (Chrome >= 35, Firefox >= 38, Edge >= 13).
 
