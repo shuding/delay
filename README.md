@@ -1,6 +1,6 @@
 # Delay for JavaScript
 An one line implementation of `sleep function` in JavaScript with generator.  
-Without callbacks, promises, never stack overflow. Inspired by tj/co.
+Without callbacks or promises. Inspired by tj/co.
 
 __Warning: this is an experiment project and not safe for production use.__
 
